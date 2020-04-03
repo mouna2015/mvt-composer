@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AffichageService } from '../affichage.service';
 import {Router} from '@angular/router';
-import { Mvt } from '../mvt';
-
+import{Mvt} from '../model/mvt';
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-afficher-mvt',
@@ -11,21 +11,19 @@ import { Mvt } from '../mvt';
 })
 export class AfficherMvtComponent implements OnInit {
  
-mvt : any
-id : number;
+  mvts: Mvt[];
 
-constructor(private service:AffichageService) { }
-
-public findMvtById(){
-  let resp= this.service.getMvtById(this.id)
-  resp.subscribe((data)=>this.mvt=data);
- }
-
-  ngOnInit() {
-    let resp=this.service.getAllMvt();
-    resp.subscribe((data)=>this.mvt=data);
-   
-  }
+constructor(private service:AffichageService,  private router: Router) { }
 
   
+  ngOnInit() {
+      this.service.findAllMvt().subscribe(data => {
+        this.mvts = data;
+      });
+    }
+
+
+
+
+
 }
