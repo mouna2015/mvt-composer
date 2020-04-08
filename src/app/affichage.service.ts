@@ -22,7 +22,7 @@ export class AffichageService {
   constructor(private http : HttpClient) { }
 
   
-	private baseUrl = '/http://localhost:8080/api/v1/getAllMvt';
+	private baseUrl = 'http://localhost:8080/api/v1/getAllMvt';
 
 
 

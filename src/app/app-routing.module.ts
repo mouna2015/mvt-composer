@@ -4,7 +4,7 @@ import {AfficherMvtComponent} from './afficher-mvt/afficher-mvt.component';
 import { from } from 'rxjs';
 
 const routes: Routes = [
-  {path:'',redirectTo:'/afficher',pathMatch:'full'},
+  {path:'',redirectTo:'afficher',pathMatch:'full'},
    {path:'afficher',component:AfficherMvtComponent},
    
 ];

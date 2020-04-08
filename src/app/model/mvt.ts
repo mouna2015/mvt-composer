@@ -1,9 +1,7 @@
 export class Mvt{
-
-    constructor(
-
-        id : number,
-        file : string,
-    ){}
+      id : number;
+      file : string;
+    constructor()
+    {}
 
 }
